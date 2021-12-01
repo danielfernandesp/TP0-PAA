@@ -7,7 +7,7 @@ int main()
 {
     setlocale(LC_ALL, "Portuguese");
     TipoQuadro Quad;
-    int opcao = 0,opcao2 = 0,qtd;
+    int opcao = 0,qtd;
 
 
     int i,j;
@@ -17,15 +17,15 @@ int main()
         Inicializa(&Quad);
         printf("\n\nPROGRAMA GERADOR DE OBRA DE ARTE:\n");
         printf("====================================\n");
-        printf("Escolha o tipo de figura b√°sica a ser usada para criar a obra:\n");
+        printf("Escolha o tipo de figura b·sica a ser usada para criar a obra:\n");
         printf("1 - Asterisco simples.\n");
-        printf("2 - S√≠mbolo de soma com asteriscos.\n");
+        printf("2 - SÌmbolo de soma com asteriscos.\n");
         printf("3 - Letra X com asteriscos.\n");
         printf("4 - Figuras aleatorias\n");
         printf("5 - Cruz com asteriscos (max: 45)\n");
         printf("6 - Sair\n");
 
-        printf("Digite o tipo de figura b√°sica desejada: ");
+        printf("Digite o tipo de figura b·sica desejada: ");
         scanf("%d",&opcao);
         fflush(stdin);
 
@@ -52,7 +52,7 @@ int main()
             CruzArt(&Quad,qtd,1);
             break;
         default:
-            if(opcao != 6)printf("Escolha uma op√ß√£o v√°lida!\n");
+            if(opcao != 6)printf("Escolha uma opÁ„o v·lida!\n");
             break;
         }
     }while (opcao != 6);

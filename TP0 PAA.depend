@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1638394466 source:c:\users\danie\documents\faculdade\paa\tp0 paa\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TADQuadro.h"
+	<locale.h>
+
+1638394454 c:\users\danie\documents\faculdade\paa\tp0 paa\tadquadro.h
+
+1638394442 source:c:\users\danie\documents\faculdade\paa\tp0 paa\quadro.c
+	<stdio.h>
+	<stdlib.h>
+	"TADQuadro.h"
+
