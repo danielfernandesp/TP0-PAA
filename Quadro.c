@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "TADQuadro.h"
 
 void ImprimeArt(TipoQuadro *Quad){
@@ -58,25 +59,26 @@ void Inicializa(TipoQuadro *Quad){
     return;
 }
 
-void AsteriscoArt(TipoQuadro *Quad, int qtd, short flag) // opcao 1
+void AsteriscoArt(TipoQuadro *Quad, int qtd, short flag){ // opcao 1
 
     int i,j,k,opcao = 0;
     srand(time(NULL));
 
-    if (qtd >100)
+    if (qtd >100){
         qtd = 100;
-
-    else if (qtd <= 0) qtd = rand() % 100;//para valores menores iguais a 0, deve-se gerar uma quantidade aleatória
+    }else {
+        if (qtd <= 0) { qtd = rand() % 100; };//para valores menores iguais a 0, deve-se gerar uma quantidade aleatï¿½ria
+    }
 
     for (k = 0;k<qtd;k++){
         i = 1 + (rand() % 19);// para i [1,19]
         j = 1 + (rand() % 77);// para j [1,78]
 
-        if (Quad->quadro[i][j] != '*')//trata caracteres ja existentes
+        if (Quad->quadro[i][j] != '*') {//trata caracteres ja existentes
             Quad->quadro[i][j] = '*';
-
-        else
+        }else {
             k--;//valor decrementado, pois houve conflito de valores.
+        }
     }
 
 
@@ -101,7 +103,7 @@ void MaisArt(TipoQuadro *Quad, int qtd,short flag){
     if (qtd >100)
         qtd = 100;
 
-    else if (qtd <= 0) qtd = rand() % 100;//para valores menores iguais a 0, deve-se gerar uma quantidade aleatória
+    else if (qtd <= 0) qtd = rand() % 100;//para valores menores iguais a 0, deve-se gerar uma quantidade aleatï¿½ria
 
     for (k = 0;k<qtd;k++){
         i = 2 + (rand() % 16);//ocupa posicoes 2 a 18
@@ -139,7 +141,7 @@ void XArt(TipoQuadro *Quad, int qtd,short flag){
     if (qtd > 100)
         qtd = 100;
 
-    else if (qtd <= 0) qtd = rand() % 100;//para valores menores iguais a 0, deve-se gerar uma quantidade aleatória
+    else if (qtd <= 0) qtd = rand() % 100;//para valores menores iguais a 0, deve-se gerar uma quantidade aleatï¿½ria
 
     for (k = 0;k<qtd;k++){
         i = 2 + (rand() % 16);
@@ -181,7 +183,7 @@ void AleatorioArt(TipoQuadro *Quad, int qtd,short flag){
     if (qtd > 50)
         qtd = 50;
 
-    else if (qtd <= 0) qtd = rand() % 50;//para valores menores iguais a 0, deve-se gerar uma quantidade aleatória
+    else if (qtd <= 0) qtd = rand() % 50;//para valores menores iguais a 0, deve-se gerar uma quantidade aleatï¿½ria
 
     while (limite < qtd){//valores aleatorios de 0 a 3
         indice = rand() % 4;
@@ -215,13 +217,13 @@ void CruzArt(TipoQuadro *Quad, int qtd,short flag){
     if (qtd > 40)
         qtd = 40;
 
-    else if (qtd <= 0) qtd = rand() % 40;//para valores menores iguais a 0, deve-se gerar uma quantidade aleatória
+    else if (qtd <= 0) qtd = rand() % 40;//para valores menores iguais a 0, deve-se gerar uma quantidade aleatï¿½ria
 
     for (k = 0;k<qtd;k++){
         i = 1 + (rand() % 12);
         j = 3 + (rand() % 75);
 
-        if (Quad->quadro[i][j]!= '*' && Quad->quadro[i-2][j]!= '*' && Quad->quadro[i+2][j]!= '*' && Quad->quadro[i][j+1]!= '*' && Quad->quadro[i][j-2]!= '*' && Quad->quadro[i+1][j+1]!= '*' && Quad->quadro[i+2][j+1]!= '*' && Quad->quadro[i-2][j-1]!= '*' && Quad->quadro[i+2][j-1]!= '*' && Quad->quadro[i-2][j-2]!= '*' && Quad->quadro[i+2][j-2]!= '*' && Quad->quadro[i-1][j-2]!= '*' && Quad->quadro[i+1][j-2]!= '*') {
+        if (Quad->quadro[i][j]!= '*' && Quad->quadro[i-2][j]!= '*' && Quad->quadro[i+2][j]!= '*' && Quad->quadro[i][j+1]!= '*' && Quad->quadro[i][j-2]!= '*' && Quad->quadro[i+1][j+1]!= '*' && Quad->quadro[i+2][j+1]!= '*' && Quad->quadro[i-2][j-1]!= '*' && Quad->quadro[i+2][j-1]!= '*' && Quad->quadro[i-2][j-2]!= '*' && Quad->quadro[i+2][j-2]!= '*' && Quad->quadro[i-1][j-2]!= '*' && Quad->quadro[i+1][j-2]!= '*') { //TODO: Melhorar essa averiguacao
                Quad->quadro[i][j]= '*';
                Quad->quadro[i][j+1]= '*';
                Quad->quadro[i][j+2]= '*';
