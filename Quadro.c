@@ -224,11 +224,11 @@ void CruzArt(TipoQuadro *Quad, int qtd,short flag){
         j = 3 + (rand() % 75);
 
         if (Quad->quadro[i][j]!= '*') {
-            if(Quad->quadro[i+1][j+1]!= '*' && Quad->quadro[i+2][j+1]!= '*' && Quad->quadro[i+3][j+1]!= '*' && Quad->quadro[i+4][j+1]!= '*' && Quad->quadro[i-1][j+1]!= '*' && Quad->quadro[i-2][j+1]!= '*'){
-                if(Quad->quadro[i+1][j-1]!= '*' && Quad->quadro[i+2][j-1]!= '*' && Quad->quadro[i+3][j-1]!= '*' && Quad->quadro[i+4][j-1]!= '*' && Quad->quadro[i-1][j-1]!= '*' && Quad->quadro[i-2][j-1]!= '*'){
-                    if(Quad->quadro[i+1][j+1]!= '*' && Quad->quadro[i+1][j+2]!= '*' && Quad->quadro[i+1][j+3]!= '*' && Quad->quadro[i+1][j-1]!= '*' && Quad->quadro[i+1][j-2]!= '*' && Quad->quadro[i+1][j-3]!= '*'){
-                        if(Quad->quadro[i-1][j+1]!= '*' && Quad->quadro[i-1][j+2]!= '*' && Quad->quadro[i-1][j+3]!= '*' && Quad->quadro[i-1][j-1]!= '*' && Quad->quadro[i-1][j-2]!= '*' && Quad->quadro[i-1][j-3]!= '*'){
-                            if(Quad->quadro[i][j+4]!= '|' && Quad->quadro[i+5][j]!= '-' && Quad->quadro[i][j-4]!= '|' && Quad->quadro[i-3][j]!= '-'){
+            if(Quad->quadro[i+1][j+1]!= '*' && Quad->quadro[i+2][j+1]!= '*' && Quad->quadro[i+3][j+1]!= '*' && Quad->quadro[i+4][j+1]!= '*' && Quad->quadro[i-1][j+1]!= '*' && Quad->quadro[i-2][j+1]!= '*'){ //detecta contatos na parte vertical direita da cruz
+                if(Quad->quadro[i+1][j-1]!= '*' && Quad->quadro[i+2][j-1]!= '*' && Quad->quadro[i+3][j-1]!= '*' && Quad->quadro[i+4][j-1]!= '*' && Quad->quadro[i-1][j-1]!= '*' && Quad->quadro[i-2][j-1]!= '*'){ //detecta contatos na parte vertical esquerda da cruz
+                    if(Quad->quadro[i+1][j+1]!= '*' && Quad->quadro[i+1][j+2]!= '*' && Quad->quadro[i+1][j+3]!= '*' && Quad->quadro[i+1][j-1]!= '*' && Quad->quadro[i+1][j-2]!= '*' && Quad->quadro[i+1][j-3]!= '*'){ //detecta contatos na parte horizontal inferior da cruz
+                        if(Quad->quadro[i-1][j+1]!= '*' && Quad->quadro[i-1][j+2]!= '*' && Quad->quadro[i-1][j+3]!= '*' && Quad->quadro[i-1][j-1]!= '*' && Quad->quadro[i-1][j-2]!= '*' && Quad->quadro[i-1][j-3]!= '*'){ //detecta contatos na parte horizontal superior da cruz
+                            if(Quad->quadro[i][j+4]!= '|' && Quad->quadro[i+5][j]!= '-' && Quad->quadro[i][j-4]!= '|' && Quad->quadro[i-3][j]!= '-'){ //detecta contatos nas 4 partes mais extremas, que podem tocar a moldura do quadro
                                 Quad->quadro[i][j]= '*';
                                 Quad->quadro[i][j+1]= '*';
                                 Quad->quadro[i][j+2]= '*';
