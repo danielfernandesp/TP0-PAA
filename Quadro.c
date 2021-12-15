@@ -223,20 +223,31 @@ void CruzArt(TipoQuadro *Quad, int qtd,short flag){
         i = 1 + (rand() % 12);
         j = 3 + (rand() % 75);
 
-        if (Quad->quadro[i][j]!= '*' && Quad->quadro[i-2][j]!= '*' && Quad->quadro[i+2][j]!= '*' && Quad->quadro[i][j+1]!= '*' && Quad->quadro[i][j-2]!= '*' && Quad->quadro[i+1][j+1]!= '*' && Quad->quadro[i+2][j+1]!= '*' && Quad->quadro[i-2][j-1]!= '*' && Quad->quadro[i+2][j-1]!= '*' && Quad->quadro[i-2][j-2]!= '*' && Quad->quadro[i+2][j-2]!= '*' && Quad->quadro[i-1][j-2]!= '*' && Quad->quadro[i+1][j-2]!= '*') { //TODO: Melhorar essa averiguacao
-               Quad->quadro[i][j]= '*';
-               Quad->quadro[i][j+1]= '*';
-               Quad->quadro[i][j+2]= '*';
-               Quad->quadro[i][j+3]= '*';
-               Quad->quadro[i][j+4]= '*';
-               Quad->quadro[i][j+5]= '*';
-               Quad->quadro[i][j+6]= '*';
-               Quad->quadro[i+4][j+3]= '*';
-               Quad->quadro[i+3][j+3]= '*';
-               Quad->quadro[i+2][j+3]= '*';
-               Quad->quadro[i+1][j+3]= '*';
-               Quad->quadro[i-1][j+3]= '*';
-               Quad->quadro[i-2][j+3]= '*';
+        if (Quad->quadro[i][j]!= '*') {
+            if(Quad->quadro[i+1][j+1]!= '*' && Quad->quadro[i+2][j+1]!= '*' && Quad->quadro[i+3][j+1]!= '*' && Quad->quadro[i+4][j+1]!= '*' && Quad->quadro[i-1][j+1]!= '*' && Quad->quadro[i-2][j+1]!= '*'){
+                if(Quad->quadro[i+1][j-1]!= '*' && Quad->quadro[i+2][j-1]!= '*' && Quad->quadro[i+3][j-1]!= '*' && Quad->quadro[i+4][j-1]!= '*' && Quad->quadro[i-1][j-1]!= '*' && Quad->quadro[i-2][j-1]!= '*'){
+                    if(Quad->quadro[i+1][j+1]!= '*' && Quad->quadro[i+1][j+2]!= '*' && Quad->quadro[i+1][j+3]!= '*' && Quad->quadro[i+1][j-1]!= '*' && Quad->quadro[i+1][j-2]!= '*' && Quad->quadro[i+1][j-3]!= '*'){
+                        if(Quad->quadro[i-1][j+1]!= '*' && Quad->quadro[i-1][j+2]!= '*' && Quad->quadro[i-1][j+3]!= '*' && Quad->quadro[i-1][j-1]!= '*' && Quad->quadro[i-1][j-2]!= '*' && Quad->quadro[i-1][j-3]!= '*'){
+                            if(Quad->quadro[i][j+4]!= '|' && Quad->quadro[i+5][j]!= '-' && Quad->quadro[i][j-4]!= '|' && Quad->quadro[i-3][j]!= '-'){
+                                Quad->quadro[i][j]= '*';
+                                Quad->quadro[i][j+1]= '*';
+                                Quad->quadro[i][j+2]= '*';
+                                Quad->quadro[i][j+3]= '*';
+                                Quad->quadro[i][j+4]= '*';
+                                Quad->quadro[i][j+5]= '*';
+                                Quad->quadro[i][j+6]= '*';
+                                Quad->quadro[i+4][j+3]= '*';
+                                Quad->quadro[i+3][j+3]= '*';
+                                Quad->quadro[i+2][j+3]= '*';
+                                Quad->quadro[i+1][j+3]= '*';
+                                Quad->quadro[i-1][j+3]= '*';
+                                Quad->quadro[i-2][j+3]= '*';
+                            }
+
+                        }
+                    }
+                }
+            }
         }
 
         else
